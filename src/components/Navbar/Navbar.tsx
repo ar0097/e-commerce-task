@@ -4,7 +4,7 @@ import { IoSearchOutline } from "react-icons/io5";
 
 function Navbar() {
   return (
-    <div className="flex justify-evenly items-center bg-white pt-4">
+    <div className="flex justify-evenly items-center bg-white pt-4 pb-3">
       <Image src="./flipkart_logo.svg" width={160} height={40} alt="" />
       <div className="flex items-center bg-slate-100 pt-2 pb-2 w-6/12 rounded-lg">
         <IoSearchOutline className="w-10 text-zinc-600" />
