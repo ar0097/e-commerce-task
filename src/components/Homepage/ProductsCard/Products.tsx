@@ -42,7 +42,7 @@ const products = [
 
 function Products() {
   return (
-    <div className='flex justify-evenly items-center bg-white mt-2 mx-5 p-5'>
+    <div className='flex justify-evenly items-center bg-white mt-2 mx-4 p-5'>
         {products.map((product, index)=> {
             return (
                 <div key={index} className='flex justify-center items-center flex-col'>
