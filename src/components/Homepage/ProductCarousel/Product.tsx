@@ -1,15 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { GrFormPrevious, GrFormNext } from "react-icons/gr";
-
-const carouselData = [
-  "/assets/advertise/acer.webp",
-  "/assets/advertise/earlybirddeals.webp",
-  "/assets/advertise/flights.webp",
-  "/assets/advertise/flipkart.webp",
-  "/assets/advertise/fly.webp",
-  "/assets/advertise/samsung.webp",
-];
+import { carouselData } from "@/components/data/Data";
 
 function Product() {
   const [index, setIndex] = useState(0);
@@ -23,19 +15,11 @@ function Product() {
   }, []);
 
   const previousImage = () => {
-    if (index == 0) {
-      setIndex(5);
-    } else {
-      setIndex(index - 1);
-    }
+    setIndex(index === 0 ? carouselData.length - 1 : index-1)
   };
 
   const nextImage = () => {
-    if (index == carouselData.length - 1) {
-      setIndex(0);
-    } else {
-      setIndex(index + 1);
-    }
+    setIndex(index === carouselData.length - 1? 0 : index+1)
   };
 
   return (

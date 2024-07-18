@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
-
+import { data } from '@/components/data/Data' 
 const products = [
     {
         img: '/grocery.webp',
@@ -43,7 +43,7 @@ const products = [
 function Products() {
   return (
     <div className='flex justify-evenly items-center bg-white mt-2 mx-4 p-5'>
-        {products.map((product, index)=> {
+        {data.map((product, index)=> {
             return (
                 <div key={index} className='flex justify-center items-center flex-col'>
                     <Image src={product.img} alt='' width={64} height={64} />
