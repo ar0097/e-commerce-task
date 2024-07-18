@@ -62,7 +62,8 @@ function Product() {
           {carouselData.map((image, i) => (
             <div
               key={i}
-              className={`transition-all w-1.5 h-1.5 bg-white rounded-full  ${
+              onClick={()=>setIndex(i)}
+              className={`transition-all w-1.5 h-1.5 cursor-pointer bg-white rounded-full  ${
                 index === i ? "p-0.5" : "bg-opacity-50"
               }`}
             ></div>
