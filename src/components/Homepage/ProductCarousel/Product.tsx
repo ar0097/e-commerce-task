@@ -54,7 +54,7 @@ function Product() {
       >
         <GrFormNext size={20} />
       </button>
-      <div className="absolute bottom-2 right-0 left-0 flex justify-center">
+      <div className="absolute bottom-3 right-0 left-0 flex justify-center">
         <div className="flex items-center gap-2 bg-black w-[85px] py-0.5 px-2 rounded-lg bg-opacity-15">
           {carouselData.map((_, i) => (
             <div

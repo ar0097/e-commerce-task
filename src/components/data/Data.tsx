@@ -1,3 +1,4 @@
+import { GrFormPrevious, GrFormNext } from "react-icons/gr";
 export const data = [
   {
     img: "/grocery.webp",
@@ -37,7 +38,6 @@ export const data = [
   },
 ];
 
-
 export const carouselData = [
   "/assets/advertise/acer.webp",
   "/assets/advertise/earlybirddeals.webp",
@@ -45,4 +45,63 @@ export const carouselData = [
   "/assets/advertise/flipkart.webp",
   "/assets/advertise/fly.webp",
   "/assets/advertise/samsung.webp",
-]; 
+];
+
+export const electronicsData = [
+  {
+    category: "Best of Electronics",
+    prev: <GrFormPrevious />,
+    next: <GrFormNext />,
+    items: [
+      {
+        img: "/assets/electronics/cameras.webp",
+        alt: "Camera",
+        title: "Top Wireless Cameras",
+        price: "Shop Now",
+      },
+      {
+        img: "/assets/electronics/headphone.webp",
+        alt: "Headphone",
+        title: "Best Truewireless Headphones",
+        price: "Grab Now",
+      },
+      {
+        img: "/assets/electronics/monitor.webp",
+        alt: "Monitor",
+        title: "Monitors",
+        price: "From ₹6599",
+      },
+      {
+        img: "/assets/electronics/monitors.webp",
+        alt: "Monitors",
+        title: "Monitor",
+        price: "From ₹8279",
+      },
+      {
+        img: "/assets/electronics/printers.webp",
+        alt: "Printers",
+        title: "Printers",
+        price: "From ₹3999",
+      },
+      {
+        img: "/assets/electronics/shavers.webp",
+        alt: "Shavers",
+        title: "Best of Shavers",
+        price: "From ₹1,649",
+      },
+      {
+        img: "/assets/electronics/speaker.webp",
+        alt: "Speaker",
+        title: "Best Selling Mobile Speaker",
+        price: "From ₹499*",
+      },
+      {
+        img: "/assets/electronics/watches.webp",
+        alt: "Watches",
+        title: "Boat Smartwatches",
+        price: "From ₹1,099",
+      },
+    ],
+  },
+  
+];
