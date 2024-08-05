@@ -1,10 +1,32 @@
 "use client";
 import { electronicsData } from "@/components/data/Data";
 import Image from "next/image";
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 
 function Category() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [isScrolledLeft, setIsScrolledLeft] = useState(false);
+  const [isScrolledRight, setIsScrolledRight] = useState(false);
+  
+  useEffect(() => {
+    if (containerRef.current) {
+      const handleScroll = () => {
+        if (containerRef.current) {
+          const { scrollLeft, scrollWidth, clientWidth } = containerRef.current;
+          setIsScrolledLeft(scrollLeft > 0);
+          setIsScrolledRight(scrollLeft < scrollWidth - clientWidth);
+        }
+      };
+
+      handleScroll();
+
+      containerRef.current.addEventListener("scroll", handleScroll);
+
+      return () => {
+        containerRef.current?.removeEventListener("scroll", handleScroll);
+      };
+    }
+  }, []);
 
   const handlescrollLeft = () => {
     if (containerRef.current) {
@@ -53,18 +75,22 @@ function Category() {
                   );
                 })}
               </div>
-              <button
-                onClick={handlescrollLeft}
-                className="bg-white w-10 h-20 text-gray-400 px-2 border-l-slate-200 border-l-[1px] rounded-r-md absolute left-[20px] top-[57%] transform -translate-y-1/2"
-              >
-                {data.prev}
-              </button>
-              <button
-                onClick={handlescrollRight}
-                className="bg-white w-10 h-20 text-gray-400 px-2 rounded-l-md border-l-slate-200 border-r-[1px] absolute right-[20px] top-[57%] transform -translate-y-1/2"
-              >
-                {data.next}
-              </button>
+              {isScrolledLeft && (
+                <button
+                  onClick={handlescrollLeft}
+                  className="bg-white w-10 h-20 text-gray-400 px-2 rounded-r-md absolute left-[20px] top-[57%] transform -translate-y-1/2"
+                >
+                  {data.prev}
+                </button>
+              )}
+              {isScrolledRight && (
+                <button
+                  onClick={handlescrollRight}
+                  className="bg-white w-10 h-20 text-gray-400 px-2 rounded-l-md absolute right-[20px] top-[57%] transform -translate-y-1/2"
+                >
+                  {data.next}
+                </button>
+              )}
             </div>
           );
         })}
