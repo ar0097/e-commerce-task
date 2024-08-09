@@ -54,19 +54,17 @@ function Product() {
       >
         <GrFormNext size={20} />
       </button>
-      <div className="absolute bottom-3 right-0 left-0 flex justify-center">
-        <div className="flex items-center gap-2 bg-black w-[85px] py-0.5 px-2 rounded-lg bg-opacity-15">
+        <div className="flex items-center m-auto absolute right-0 left-0 bottom-3 gap-2  w-[80px]">
           {carouselData.map((_, i) => (
             <div
               key={i}
               onClick={() => setIndex(i)}
               className={`transition-all w-1.5 h-1.5 cursor-pointer bg-white rounded-full ${
-                index === i ? "p-0.5" : "bg-opacity-50"
+                index === i ? "py-0.5 px-1" : "bg-opacity-50"
               }`}
             ></div>
           ))}
         </div>
-      </div>
     </div>
   );
 }

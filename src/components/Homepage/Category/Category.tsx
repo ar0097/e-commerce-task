@@ -23,6 +23,7 @@ function Category() {
       containerRef.current.addEventListener("scroll", handleScroll);
 
       return () => {
+        // eslint-disable-next-line react-hooks/exhaustive-deps
         containerRef.current?.removeEventListener("scroll", handleScroll);
       };
     }
@@ -50,7 +51,7 @@ function Category() {
                 <h1 className="text-2xl py-3">{data.category}</h1>
               </div>
               <div
-                className="flex gap-4 overflow-hidden scroll-smooth"
+                className="flex gap-4 overflow-hidden scroll-smooth pb-5"
                 ref={containerRef}
               >
                 {data.items.map((ele, idx) => {
