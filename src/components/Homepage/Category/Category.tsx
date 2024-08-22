@@ -1,13 +1,16 @@
 "use client";
-import { electronicsData } from "@/components/data/Data";
-import Image from "next/image";
+import { ElectronicsCategory } from "@/typesofdata/datatypes";
 import React, { useState, useRef, useEffect } from "react";
 
-function Category() {
+interface CategoryProps {
+  data: ElectronicsCategory[];
+}
+
+function Category({ data }: CategoryProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isScrolledLeft, setIsScrolledLeft] = useState(false);
   const [isScrolledRight, setIsScrolledRight] = useState(false);
-  
+
   useEffect(() => {
     if (containerRef.current) {
       const handleScroll = () => {
@@ -44,11 +47,11 @@ function Category() {
   return (
     <div className="my-4 mx-4 bg-slate-100">
       <div className="">
-        {electronicsData.map((data, idx) => {
+        {data.map((data, idx) => {
           return (
             <div key={idx} className="bg-white px-5 relative">
               <div>
-                <h1 className="text-2xl py-3">{data.category}</h1>
+                <h1 className="text-xl py-3">{data.category}</h1>
               </div>
               <div
                 className="flex gap-4 overflow-hidden scroll-smooth pb-5"
@@ -62,7 +65,11 @@ function Category() {
                     >
                       <div className="w-[180px] m-auto">
                         {/*eslint-disable-next-line @next/next/no-img-element*/}
-                        <img src={ele.img} alt={ele.alt} className=" m-auto" />
+                        <img
+                          src={ele.img}
+                          alt={ele.alt}
+                          className=" m-auto hover:scale-105"
+                        />
                       </div>
                       <div className="text-center">
                         <h1>
@@ -70,7 +77,9 @@ function Category() {
                             ? ele.title.slice(0, 18) + "..."
                             : ele.title}
                         </h1>
-                        <p>{ele.price}</p>
+                        <p className="font-medium tracking-tighter">
+                          {ele.price}
+                        </p>
                       </div>
                     </div>
                   );
