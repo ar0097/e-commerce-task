@@ -39,7 +39,7 @@ export const data = [
   },
 ];
 
-export const carouselData = [
+export const carouselData: string[] = [
   "/assets/advertise/acer.webp",
   "/assets/advertise/earlybirddeals.webp",
   "/assets/advertise/flights.webp",
@@ -48,8 +48,7 @@ export const carouselData = [
   "/assets/advertise/samsung.webp",
 ];
 
-
-export const electronicsData: ElectronicsCategory[]  = [
+export const electronicsData: ElectronicsCategory[] = [
   {
     category: "Best of Electronics",
     prev: <GrFormPrevious />,
@@ -106,7 +105,6 @@ export const electronicsData: ElectronicsCategory[]  = [
     ],
   },
 ];
-
 
 export const toysData: ElectronicsCategory[] = [
   {
